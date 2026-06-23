@@ -87,18 +87,41 @@ const Home = () => {
     }
   ];
 
+  const workflowSteps = [
+    {
+      number: '1',
+      title: 'Upload Notice Document',
+      desc: 'Upload the official scholarship notice circular or form rules image file to let the portal scan details.',
+    },
+    {
+      number: '2',
+      title: 'Extract Policy Guidelines',
+      desc: 'The portal extracts eligibility limits, lists required documents, and highlights deadline dates.',
+    },
+    {
+      number: '3',
+      title: 'Verify Applicant Certificates',
+      desc: 'Upload certificate scans (Aadhaar, income proof) to identify name spelling conflicts or expired dates.',
+    },
+  ];
+
   return (
     <div className="space-y-16 pb-12">
       {/* 1. Hero Section (Grounded Civic Intro with AI Demo) */}
-      <section className="relative py-12 px-6 sm:py-16 sm:px-12 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-slate-100 overflow-hidden">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        className="relative py-8 px-6 sm:py-10 sm:px-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-slate-100 overflow-hidden"
+      >
         
         {/* Subtle Patriotic Corner Accents */}
         <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-amber-500 via-transparent to-emerald-600"></div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-7 items-center relative z-10">
           
           {/* Left Column (Hero Content) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-3.5 lg:pr-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wide">
               AI-Powered Citizen Support Portal
             </div>
@@ -111,16 +134,16 @@ const Home = () => {
               Upload Any Government Notice and Get Eligibility, Required Documents, Deadlines and Verification Insights in Seconds.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-              <Link to="/analyze" className="w-full sm:w-auto btn-primary text-xs py-3 px-6">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <Link to="/analyze" className="w-full sm:w-auto btn-primary text-xs py-3 px-6 transition-transform duration-300 hover:scale-[1.02]">
                 AI Notice Analysis <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/eligibility" className="w-full sm:w-auto btn-secondary text-xs py-3 px-6">
+              <Link to="/eligibility" className="w-full sm:w-auto btn-secondary text-xs py-3 px-6 transition-transform duration-300 hover:scale-[1.02]">
                 AI Eligibility Engine
               </Link>
             </div>
 
-            <div className="pt-6 flex flex-wrap items-center gap-6 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
+            <div className="pt-4 flex flex-wrap items-center gap-6 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-1.5">
                 <Users className="w-4 h-4 text-slate-400" />
                 <span>AI-powered checks for citizen welfare schemes</span>
@@ -133,8 +156,8 @@ const Home = () => {
           </div>
 
           {/* Right Column (Visual AI Demo Panel) */}
-          <div className="lg:col-span-5 w-full">
-            <div className="bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-card p-6 space-y-5 text-xs shadow-sm">
+          <div className="lg:col-span-5 w-full lg:flex lg:justify-end lg:items-center">
+            <div className="w-full lg:max-w-[420px] bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-card p-6 space-y-5 text-xs shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/20">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-red-100 dark:bg-red-950/30 text-red-600 rounded">
@@ -175,7 +198,7 @@ const Home = () => {
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* 2. Available Services Section */}
       <section className="space-y-6">
@@ -222,7 +245,13 @@ const Home = () => {
       </section>
 
       {/* 3. How it Works */}
-      <section className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-xl border border-slate-200 dark:border-slate-800 space-y-10">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+        className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-xl border border-slate-200 dark:border-slate-800 space-y-8"
+      >
         <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
           <h2 className="text-base font-extrabold text-slate-900 dark:text-white uppercase">
             Form Preparation Workflow
@@ -232,38 +261,50 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-2">
-            <div className="text-xs font-bold text-blue-900 dark:text-blue-400 flex items-center gap-2">
-              <span className="w-6 h-6 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-mono">1</span>
-              Upload Notice Document
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              Upload the official scholarship notice circular or form rules image file to let the portal scan details.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {workflowSteps.map((step, index) => (
+            <div key={step.number} className="relative flex flex-col">
+              {/* Mobile vertical connector */}
+              {index > 0 && (
+                <div aria-hidden="true" className="md:hidden flex justify-center py-2">
+                  <div className="w-px h-5 border-l border-dashed border-slate-300 dark:border-slate-600" />
+                </div>
+              )}
 
-          <div className="space-y-2">
-            <div className="text-xs font-bold text-blue-900 dark:text-blue-400 flex items-center gap-2">
-              <span className="w-6 h-6 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-mono">2</span>
-              Extract Policy Guidelines
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              The portal extracts eligibility limits, lists required documents, and highlights deadline dates.
-            </p>
-          </div>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.4, delay: index * 0.1, ease: 'easeOut' }}
+                className="relative flex-1 p-5 sm:p-6 rounded-card border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/40 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/20"
+              >
+                <div className="space-y-3">
+                  <div className="text-xs font-bold text-blue-900 dark:text-blue-400 flex items-center gap-3">
+                    <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ring-2 ring-blue-900/10 dark:ring-blue-400/20 flex items-center justify-center font-mono text-sm font-extrabold text-blue-900 dark:text-blue-400 shrink-0">
+                      {step.number}
+                    </span>
+                    {step.title}
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pl-11 sm:pl-12">
+                    {step.desc}
+                  </p>
+                </div>
+              </motion.div>
 
-          <div className="space-y-2">
-            <div className="text-xs font-bold text-blue-900 dark:text-blue-400 flex items-center gap-2">
-              <span className="w-6 h-6 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-mono">3</span>
-              Verify Applicant Certificates
+              {/* Desktop horizontal connector */}
+              {index < workflowSteps.length - 1 && (
+                <div
+                  aria-hidden="true"
+                  className="hidden md:flex absolute top-9 left-full w-8 items-center pointer-events-none z-10 -translate-y-1/2"
+                >
+                  <div className="flex-1 border-t border-dashed border-slate-300 dark:border-slate-600" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 shrink-0 ml-0.5" />
+                </div>
+              )}
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              Upload certificate scans (Aadhaar, income proof) to identify name spelling conflicts or expired dates.
-            </p>
-          </div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* 4. Common Problems FormSahay Solves */}
       <section className="space-y-6">
