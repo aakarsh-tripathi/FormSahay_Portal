@@ -5,6 +5,34 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --fs-bg: #FFFFFF;
+    --fs-bg-alt: #F8FAFC;
+    --fs-card: #FFFFFF;
+    --fs-primary: #2563EB;
+    --fs-primary-hover: #1D4ED8;
+    --fs-text: #0F172A;
+    --fs-text-secondary: #475569;
+    --fs-border: #E2E8F0;
+    --fs-success: #16A34A;
+    --fs-warning: #D97706;
+    --fs-error: #DC2626;
+  }
+
+  .dark {
+    --fs-bg: #020617;
+    --fs-bg-alt: #0F172A;
+    --fs-card: #0F172A;
+    --fs-primary: #3B82F6;
+    --fs-primary-hover: #2563EB;
+    --fs-text: #F8FAFC;
+    --fs-text-secondary: #94A3B8;
+    --fs-border: rgba(255, 255, 255, 0.08);
+    --fs-success: #22C55E;
+    --fs-warning: #F59E0B;
+    --fs-error: #EF4444;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
@@ -20,50 +48,82 @@
   .dark body {
     @apply bg-slate-950 text-slate-200;
   }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-portal-primary ring-offset-2 ring-offset-portal-bg;
+  }
+
+  .dark a:focus-visible,
+  .dark button:focus-visible {
+    @apply ring-offset-portal-bg;
+  }
+}
+
+@layer components {
+  .portal-card {
+    @apply bg-portal-card border border-portal-border rounded-card shadow-soft transition-all duration-300 ease-out;
+  }
+
+  .portal-card-interactive {
+    @apply portal-card hover:-translate-y-1 hover:shadow-medium dark:hover:shadow-medium-dark;
+  }
+
+  .portal-section-alt {
+    @apply bg-portal-bg-alt border border-portal-border rounded-xl;
+  }
+
+  .portal-heading {
+    @apply text-portal-text font-extrabold tracking-tight uppercase;
+  }
+
+  .portal-subheading {
+    @apply text-xs text-portal-text-secondary mt-1;
+  }
+
+  .portal-divider {
+    @apply border-b border-portal-border pb-3;
+  }
+
+  .portal-link {
+    @apply text-portal-primary font-extrabold transition-all duration-200 hover:text-portal-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portal-primary focus-visible:ring-offset-2 focus-visible:ring-offset-portal-bg rounded-sm;
+  }
 }
 
 /* Government Civic Portal Cards */
 .glass-card {
-  @apply bg-white border border-slate-200 shadow-sm rounded-card;
-}
-
-.dark .glass-card {
-  @apply bg-slate-900 border-slate-800 shadow-none rounded-card;
+  @apply bg-portal-card border border-portal-border shadow-soft rounded-card;
 }
 
 /* Flat Professional Buttons */
 .btn-primary {
-  @apply relative overflow-hidden transition-all duration-200 font-semibold text-white bg-blue-800 hover:bg-blue-900 active:bg-blue-950 rounded-button shadow-sm hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 px-5 py-2.5;
-}
-
-.dark .btn-primary {
-  @apply bg-blue-700 hover:bg-blue-600 active:bg-blue-800;
+  @apply relative overflow-hidden transition-all duration-300 font-semibold text-white bg-portal-primary hover:bg-portal-primary-hover active:opacity-90 rounded-button shadow-soft hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-2 px-5 py-2.5;
 }
 
 .btn-secondary {
-  @apply relative overflow-hidden transition-all duration-200 font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-button shadow-sm hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 px-5 py-2.5;
+  @apply relative overflow-hidden transition-all duration-300 font-semibold text-portal-text-secondary hover:text-portal-text bg-portal-bg-alt hover:brightness-95 active:opacity-90 rounded-button border border-portal-border shadow-soft hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-2 px-5 py-2.5;
 }
 
 .dark .btn-secondary {
-  @apply bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white active:bg-slate-900;
+  @apply bg-portal-card hover:bg-portal-bg-alt text-portal-text-secondary hover:text-portal-text;
 }
 
 .btn-outline {
-  @apply border border-slate-300 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 transition-all font-semibold rounded-button flex items-center justify-center gap-2 px-5 py-2.5;
+  @apply border border-portal-border hover:bg-portal-bg-alt text-portal-text-secondary hover:text-portal-text transition-all duration-300 font-semibold rounded-button flex items-center justify-center gap-2 px-5 py-2.5;
 }
 
-/* Formal Text - No Bright Neon Gradients */
+/* Formal Text */
 .text-gradient {
-  @apply text-blue-900 dark:text-blue-100 font-extrabold;
+  @apply text-portal-primary font-extrabold;
 }
 
 .text-gradient-saffron-green {
-  @apply text-slate-900 dark:text-white font-extrabold;
+  @apply text-portal-text font-extrabold;
 }
 
 /* Official Forms Fields */
 .input-field {
-  @apply w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-input px-4 py-2.5 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-800 focus:border-blue-800 transition-all text-sm;
+  @apply w-full bg-portal-card border border-portal-border rounded-input px-4 py-2.5 text-portal-text focus:outline-none focus:ring-2 focus:ring-portal-primary focus:ring-opacity-30 focus:border-portal-primary transition-all duration-200 text-sm;
 }
 
 /* Custom Scrollbar */
@@ -77,5 +137,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700;
+  @apply bg-portal-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
 }

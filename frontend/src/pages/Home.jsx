@@ -112,7 +112,7 @@ const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="relative py-8 px-6 sm:py-10 sm:px-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-slate-100 overflow-hidden"
+        className="relative py-8 px-6 sm:py-10 sm:px-10 rounded-xl bg-portal-card border border-portal-border shadow-soft text-portal-text overflow-hidden"
       >
         
         {/* Subtle Patriotic Corner Accents */}
@@ -122,15 +122,15 @@ const Home = () => {
           
           {/* Left Column (Hero Content) */}
           <div className="lg:col-span-7 space-y-3.5 lg:pr-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wide">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-portal-bg-alt border border-portal-border text-[10px] font-bold text-portal-text-secondary uppercase tracking-wide">
               AI-Powered Citizen Support Portal
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-portal-text leading-tight">
               India's AI Assistant for Government Forms, Scholarships & Welfare Schemes
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base text-portal-text-secondary max-w-2xl leading-relaxed">
               Upload Any Government Notice and Get Eligibility, Required Documents, Deadlines and Verification Insights in Seconds.
             </p>
 
@@ -143,13 +143,13 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="pt-4 flex flex-wrap items-center gap-6 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
+            <div className="pt-4 flex flex-wrap items-center gap-6 border-t border-portal-border text-[11px] text-portal-text-secondary">
               <div className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-slate-400" />
+                <Users className="w-4 h-4 text-portal-text-secondary/70" />
                 <span>AI-powered checks for citizen welfare schemes</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <FileCheck className="w-4 h-4 text-slate-400" />
+                <FileCheck className="w-4 h-4 text-portal-text-secondary/70" />
                 <span>AI Document Validator for certificate scans</span>
               </div>
             </div>
@@ -157,41 +157,41 @@ const Home = () => {
 
           {/* Right Column (Visual AI Demo Panel) */}
           <div className="lg:col-span-5 w-full lg:flex lg:justify-end lg:items-center">
-            <div className="w-full lg:max-w-[420px] bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-card p-6 space-y-5 text-xs shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/20">
-              <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+            <div className="w-full lg:max-w-[420px] bg-portal-bg-alt border border-portal-border rounded-card p-6 space-y-5 text-xs shadow-soft transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-medium dark:hover:shadow-medium-dark">
+              <div className="flex items-center justify-between border-b border-portal-border pb-3">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-red-100 dark:bg-red-950/30 text-red-600 rounded">
+                  <div className="p-1.5 bg-red-50 dark:bg-red-950/20 text-portal-error rounded">
                     <FileText className="w-4.5 h-4.5" />
                   </div>
-                  <span className="font-bold text-slate-700 dark:text-slate-200 truncate max-w-[150px] sm:max-w-[200px]">
+                  <span className="font-bold text-portal-text truncate max-w-[150px] sm:max-w-[200px]">
                     UP_Scholarship_Notice.pdf
                   </span>
                 </div>
-                <span className="text-[9px] bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                <span className="text-[9px] bg-green-50 dark:bg-green-950/20 text-portal-success font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                   Analyzed
                 </span>
               </div>
               
               <div className="space-y-3.5">
-                <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                  <span className="text-emerald-500 font-extrabold text-sm">✓</span>
-                  <span>Eligibility Detected: <strong className="text-slate-800 dark:text-slate-100 font-semibold">OBC/SC/ST Matched</strong></span>
+                <div className="flex items-center gap-3 text-portal-text-secondary">
+                  <span className="text-portal-success font-extrabold text-sm">✓</span>
+                  <span>Eligibility Detected: <strong className="text-portal-text font-semibold">OBC/SC/ST Matched</strong></span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                  <span className="text-emerald-500 font-extrabold text-sm">✓</span>
-                  <span>Last Date Found: <strong className="text-slate-800 dark:text-slate-100 font-semibold">Dec 15, 2026</strong></span>
+                <div className="flex items-center gap-3 text-portal-text-secondary">
+                  <span className="text-portal-success font-extrabold text-sm">✓</span>
+                  <span>Last Date Found: <strong className="text-portal-text font-semibold">Dec 15, 2026</strong></span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                  <span className="text-emerald-500 font-extrabold text-sm">✓</span>
-                  <span>Required Documents: <strong className="text-slate-800 dark:text-slate-100 font-semibold">5 Extracted</strong></span>
+                <div className="flex items-center gap-3 text-portal-text-secondary">
+                  <span className="text-portal-success font-extrabold text-sm">✓</span>
+                  <span>Required Documents: <strong className="text-portal-text font-semibold">5 Extracted</strong></span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                  <span className="text-emerald-500 font-extrabold text-sm">✓</span>
-                  <span>Missing Documents: <strong className="text-slate-800 dark:text-slate-100 font-semibold">Income Certificate</strong></span>
+                <div className="flex items-center gap-3 text-portal-text-secondary">
+                  <span className="text-portal-success font-extrabold text-sm">✓</span>
+                  <span>Missing Documents: <strong className="text-portal-text font-semibold">Income Certificate</strong></span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                  <span className="text-emerald-500 font-extrabold text-sm">✓</span>
-                  <span>AI Summary: <strong className="text-slate-800 dark:text-slate-100 font-semibold">Generated successfully</strong></span>
+                <div className="flex items-center gap-3 text-portal-text-secondary">
+                  <span className="text-portal-success font-extrabold text-sm">✓</span>
+                  <span>AI Summary: <strong className="text-portal-text font-semibold">Generated successfully</strong></span>
                 </div>
               </div>
             </div>
@@ -201,12 +201,18 @@ const Home = () => {
       </motion.section>
 
       {/* 2. Available Services Section */}
-      <section className="space-y-6">
-        <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
-          <h2 className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+        className="portal-section-alt p-8 sm:p-10 space-y-6"
+      >
+        <div className="portal-divider">
+          <h2 className="portal-heading text-lg">
             Available Citizen Services
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="portal-subheading">
             Access specific audit tools to check guidelines and coordinate forms.
           </p>
         </div>
@@ -215,34 +221,38 @@ const Home = () => {
           {features.map((feat, index) => {
             const Icon = feat.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white dark:bg-slate-900 p-6 rounded-card border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:shadow-sm transition-all"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+                className="portal-card-interactive p-6 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="inline-flex p-2.5 rounded bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                    <Icon className="w-5 h-5 text-blue-900 dark:text-slate-300" />
+                  <div className="inline-flex p-2.5 rounded bg-portal-bg-alt border border-portal-border">
+                    <Icon className="w-5 h-5 text-portal-primary" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-portal-text">
                     {feat.title}
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                  <p className="text-xs text-portal-text-secondary leading-relaxed">
                     {feat.desc}
                   </p>
                 </div>
-                <div className="pt-5 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <div className="pt-5 mt-4 border-t border-portal-border">
                   <Link 
                     to={feat.path} 
-                    className="inline-flex items-center gap-1 text-[11px] font-extrabold text-blue-800 dark:text-blue-400 hover:underline"
+                    className="portal-link inline-flex items-center gap-1 text-[11px] hover:underline"
                   >
                     Open Service Module <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
-      </section>
+      </motion.section>
 
       {/* 3. How it Works */}
       <motion.section
@@ -250,13 +260,13 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.45, ease: 'easeOut' }}
-        className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-xl border border-slate-200 dark:border-slate-800 space-y-8"
+        className="bg-portal-card p-8 sm:p-10 rounded-xl border border-portal-border shadow-soft space-y-8"
       >
-        <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
-          <h2 className="text-base font-extrabold text-slate-900 dark:text-white uppercase">
+        <div className="portal-divider">
+          <h2 className="portal-heading text-base">
             Form Preparation Workflow
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="portal-subheading">
             Standard procedure to review requirements and verify records.
           </p>
         </div>
@@ -267,7 +277,7 @@ const Home = () => {
               {/* Mobile vertical connector */}
               {index > 0 && (
                 <div aria-hidden="true" className="md:hidden flex justify-center py-2">
-                  <div className="w-px h-5 border-l border-dashed border-slate-300 dark:border-slate-600" />
+                  <div className="w-px h-5 border-l border-dashed border-portal-border" />
                 </div>
               )}
 
@@ -276,16 +286,16 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ duration: 0.4, delay: index * 0.1, ease: 'easeOut' }}
-                className="relative flex-1 p-5 sm:p-6 rounded-card border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/40 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/20"
+                className="relative flex-1 p-5 sm:p-6 rounded-card border border-portal-border bg-portal-bg-alt transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-medium dark:hover:shadow-medium-dark"
               >
                 <div className="space-y-3">
-                  <div className="text-xs font-bold text-blue-900 dark:text-blue-400 flex items-center gap-3">
-                    <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ring-2 ring-blue-900/10 dark:ring-blue-400/20 flex items-center justify-center font-mono text-sm font-extrabold text-blue-900 dark:text-blue-400 shrink-0">
+                  <div className="text-xs font-bold text-portal-primary flex items-center gap-3">
+                    <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-portal-card border border-portal-border ring-2 ring-portal-primary/10 flex items-center justify-center font-mono text-sm font-extrabold text-portal-primary shrink-0">
                       {step.number}
                     </span>
                     {step.title}
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pl-11 sm:pl-12">
+                  <p className="text-xs text-portal-text-secondary leading-relaxed pl-11 sm:pl-12">
                     {step.desc}
                   </p>
                 </div>
@@ -297,8 +307,8 @@ const Home = () => {
                   aria-hidden="true"
                   className="hidden md:flex absolute top-9 left-full w-8 items-center pointer-events-none z-10 -translate-y-1/2"
                 >
-                  <div className="flex-1 border-t border-dashed border-slate-300 dark:border-slate-600" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 shrink-0 ml-0.5" />
+                  <div className="flex-1 border-t border-dashed border-portal-border" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-portal-text-secondary/40 shrink-0 ml-0.5" />
                 </div>
               )}
             </div>
@@ -307,30 +317,43 @@ const Home = () => {
       </motion.section>
 
       {/* 4. Common Problems FormSahay Solves */}
-      <section className="space-y-6">
-        <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
-          <h2 className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+        className="portal-section-alt p-8 sm:p-10 space-y-6"
+      >
+        <div className="portal-divider">
+          <h2 className="portal-heading text-lg">
             Common Problems FormSahay Solves
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="portal-subheading">
             How FormSahay helps citizens prevent form rejection and ensure document eligibility.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {problems.map((prob, index) => (
-            <div key={index} className="bg-white dark:bg-slate-900 p-6 rounded-card border border-slate-200 dark:border-slate-800 space-y-3">
-              <h4 className="font-bold text-xs text-blue-900 dark:text-blue-400 flex items-center gap-2">
-                <span className="text-emerald-500 font-extrabold text-sm">✓</span>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-20px' }}
+              transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+              className="portal-card-interactive p-6 space-y-3"
+            >
+              <h4 className="font-bold text-xs text-portal-primary flex items-center gap-2">
+                <span className="text-portal-success font-extrabold text-sm">✓</span>
                 {prob.title}
               </h4>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-portal-text-secondary leading-relaxed">
                 {prob.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
